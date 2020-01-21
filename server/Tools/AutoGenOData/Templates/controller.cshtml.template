@@ -1,0 +1,40 @@
+﻿using AppModule.Dto;
+using DataAccessLayer.Models;
+using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebApi.Filters;
+
+namespace WebApi.Controllers.System
+{
+    public partial class @{@Model.TableName}Controller : ODataController
+    {
+        private readonly DatabaseContext databaseContext;
+
+        public @{@Model.TableName}Controller(DatabaseContext databaseContext)
+        {
+            this.databaseContext = databaseContext;
+        }
+
+		[EnableQuery]
+        public IActionResult Get()
+        {
+            return Ok(databaseContext.@{@Model.TableName});
+        }
+
+		[EnableQuery]
+        public IActionResult Get(@Model.IdType key)
+        {
+            return Ok(databaseContext.@{@Model.TableName}.FirstOrDefault(c => c.Id == key));
+        }
+
+		@foreach (var prop in @Model.PrimativeProps)
+		{ 
+		 @prop
+		}
+    }
+}

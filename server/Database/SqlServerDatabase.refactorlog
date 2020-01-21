@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="427b9279-6f48-4898-9faa-fc16b1b39cfd" ChangeDateTime="04/24/2019 16:03:45">
+    <Property Name="ElementName" Value="[dbo].[UserRoleMapper].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserRoleMapper]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ea61461d-8944-4c06-a4ba-43835d1dc06e" ChangeDateTime="04/24/2019 17:36:20">
+    <Property Name="ElementName" Value="[dbo].[AppUsers].[IX_AppUsers_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[dbo].[AppUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_AppUsers_UserName]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b3632650-45b0-48c0-bc87-cdb6a61bdcb8" ChangeDateTime="04/24/2019 17:39:22">
+    <Property Name="ElementName" Value="[dbo].[AppRoles].[IsEnable]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AppRoles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsEnabled" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5dbf3085-1280-4c62-8306-db75fec6a9c4" ChangeDateTime="04/25/2019 07:26:08">
+    <Property Name="ElementName" Value="[dbo].[AppRolePermissions].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AppRolePermissions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoleId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="98e84fbf-f67d-4f06-8c87-be86446afb37" ChangeDateTime="04/25/2019 07:37:36">
+    <Property Name="ElementName" Value="[dbo].[AppPermissions].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AppPermissions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PermissionName" />
+  </Operation>
+</Operations>

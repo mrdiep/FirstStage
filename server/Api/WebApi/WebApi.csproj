@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <UserSecretsId>0271c1f2-3ad1-4748-a24f-8c27ce6fc8f1</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\diepnguyenv\Desktop\App\server\Api\WebApi\WebApi.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\OData\**" />
+    <Compile Remove="Controllers\System\**" />
+    <Content Remove="Controllers\OData\**" />
+    <Content Remove="Controllers\System\**" />
+    <EmbeddedResource Remove="Controllers\OData\**" />
+    <EmbeddedResource Remove="Controllers\System\**" />
+    <None Remove="Controllers\OData\**" />
+    <None Remove="Controllers\System\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Controllers\OData\AppPermissionsController.cs" />
+    <Compile Include="Controllers\OData\AppPermissionsController.CustomExtension.cs" />
+    <Compile Include="Controllers\OData\AppRolePermissionsController.cs" />
+    <Compile Include="Controllers\OData\AppRolePermissionsController.CustomExtension.cs" />
+    <Compile Include="Controllers\OData\AppRolesController.cs" />
+    <Compile Include="Controllers\OData\AppRolesController.CustomExtension.cs" />
+    <Compile Include="Controllers\OData\AppUserRolesController.cs" />
+    <Compile Include="Controllers\OData\AppUserRolesController.CustomExtension.cs" />
+    <Compile Include="Controllers\OData\AppUsersController.cs" />
+    <Compile Include="Controllers\OData\AppUsersController.CustomExtension.cs" />
+    <Compile Include="Controllers\System\RoleController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JWT" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AppModule.Dto\AppModule.Dto.csproj" />
+    <ProjectReference Include="..\..\Core\AppModule\AppModule.csproj" />
+    <ProjectReference Include="..\..\Core\DataAccessLayer\DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>
